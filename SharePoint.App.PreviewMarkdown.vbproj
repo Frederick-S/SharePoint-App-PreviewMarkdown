@@ -46,6 +46,7 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Scripts\marked.min.js" />
     <None Include="MenuItemMarkdownPreviewAction\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3af3b728-9022-4c1a-9336-3d61313ad140}</SharePointProjectItemId>
     </None>

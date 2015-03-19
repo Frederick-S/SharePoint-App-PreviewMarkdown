@@ -3,5 +3,6 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="Scripts\" Type="ElementManifest" />
     <ProjectItemFile Source="App.js" Target="Scripts\" Type="ElementFile" />
+    <ProjectItemFile Source="marked.min.js" Target="Scripts\" Type="ElementFile" />
   </Files>
 </ProjectItem>

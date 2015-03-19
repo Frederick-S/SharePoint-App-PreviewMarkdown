@@ -32,7 +32,10 @@
                 type: "GET",
                 success: function (response) {
                     if (response.statusCode == 200) {
-                        alert(response.body);
+                        var markdown = response.body;
+                        var html = marked(markdown);
+
+                        $('.container').html(html);
                     } else {
                         alert(response.statusCode + ": " + response.statusText)
                     }
