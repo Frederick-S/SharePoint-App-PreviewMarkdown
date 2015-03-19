@@ -26,3 +26,12 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+bin
+obj
+pkg
+pkgobj
+packages
+
+SharePoint.App.PreviewMarkdown.vbproj.user
+SharePoint.App.PreviewMarkdown.v12.suo
