@@ -15,6 +15,11 @@
         var deferred = $.Deferred();
 
         var queryStringParameters = getQueryStringParameters();
+
+        if (!queryStringParameters.SPListId && !queryStringParameters.SPListItemId) {
+            return deferred.reject('This app is a custom menu item action, please visit this page from menu item.');
+        }
+
         var appWebUrl = queryStringParameters.SPAppWebUrl;
         var hostWebUrl = queryStringParameters.SPHostUrl;
 
@@ -40,11 +45,16 @@
     }
 
     function getFileServerRelativeUrlOnFail(message) {
-        alert(message);
+        $('.spinner').hide();
+        $('.error').text(message).show();
     }
 
     function readFileContents(serverRelativeUrl, appWebUrl, hostWebUrl) {
         var deferred = $.Deferred();
+
+        if (!serverRelativeUrl.match(/\.md$/)) {
+            return deferred.reject('Sorry, only markdown files are supported.');
+        }
 
         var executor = new SP.RequestExecutor(appWebUrl);
         var options = {
@@ -74,7 +84,8 @@
     }
 
     function readFileContentsOnFail(message) {
-        alert(message);
+        $('.spinner').hide();
+        $('.error').text(message).show();
     }
 
     function render(markdown) {

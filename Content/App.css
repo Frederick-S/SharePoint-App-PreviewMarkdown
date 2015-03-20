@@ -2,3 +2,11 @@
     margin: 50px auto;
     max-width: 70%;
 }
+
+body {
+    background-color: #F6F6F6;
+}
+
+.error {
+    display: none;
+}

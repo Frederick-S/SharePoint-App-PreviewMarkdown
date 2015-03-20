@@ -2,5 +2,6 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Content">
     <File Path="Content\App.css" Url="Content/App.css" ReplaceContent="TRUE" />
+    <File Path="Content\spinner.css" Url="Content/spinner.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>
