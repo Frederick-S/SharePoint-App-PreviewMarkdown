@@ -89,7 +89,19 @@
     }
 
     function render(markdown) {
-        var html = marked(markdown);
+        var renderer = new marked.Renderer();
+        renderer.table = function (header, body) {
+            return '<table class=\'table\'>\n'
+              + '<thead>\n'
+              + header
+              + '</thead>\n'
+              + '<tbody>\n'
+              + body
+              + '</tbody>\n'
+              + '</table>\n';
+        };
+
+        var html = marked(markdown, { renderer: renderer });
 
         $('.container').html(html);
         MathJax.Hub.Typeset();
