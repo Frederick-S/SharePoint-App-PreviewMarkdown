@@ -1,4 +1,4 @@
-﻿(function ($, marked, window) {
+﻿(function ($, marked, MathJax) {
     function getQueryStringParameters() {
         var params = document.URL.split("?")[1].split("&");
         var obj = {};
@@ -92,7 +92,8 @@
         var html = marked(markdown);
 
         $('.container').html(html);
+        MathJax.Hub.Typeset();
     }
 
     getFileServerRelativeUrl().done(readFileContentsDeferred).fail(getFileServerRelativeUrlOnFail);
-})(jQuery, marked, window);
+})(jQuery, marked, MathJax);
