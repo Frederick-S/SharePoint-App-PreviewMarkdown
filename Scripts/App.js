@@ -79,10 +79,6 @@
         return deferred.promise();
     }
 
-    function readFileContentsDeferred(serverRelativeUrl, appWebUrl, hostWebUrl) {
-        readFileContents(serverRelativeUrl, appWebUrl, hostWebUrl).done(render).fail(readFileContentsOnFail);
-    }
-
     function readFileContentsOnFail(message) {
         $('.spinner').hide();
         $('.error').text(message).show();
@@ -107,5 +103,5 @@
         MathJax.Hub.Typeset();
     }
 
-    getFileServerRelativeUrl().done(readFileContentsDeferred).fail(getFileServerRelativeUrlOnFail);
+    getFileServerRelativeUrl().then(readFileContents, getFileServerRelativeUrlOnFail).then(render, readFileContentsOnFail);
 })(jQuery, marked, MathJax);
