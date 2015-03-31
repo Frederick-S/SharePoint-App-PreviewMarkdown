@@ -1,4 +1,4 @@
-﻿(function ($, marked, MathJax) {
+﻿(function ($, SP, marked, MathJax) {
     function getQueryStringParameters() {
         var params = document.URL.split("?")[1].split("&");
         var obj = {};
@@ -104,4 +104,4 @@
     }
 
     getFileServerRelativeUrl().then(readFileContents, getFileServerRelativeUrlOnFail).then(render, readFileContentsOnFail);
-})(jQuery, marked, MathJax);
+})(jQuery, SP, marked, MathJax);
